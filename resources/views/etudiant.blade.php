@@ -7,7 +7,7 @@
             <h2>Liste des Etudiants</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="#">Create New Student</a>
+            <a class="btn btn-success" href="{{route('etudiant.create')}}">Create New Student</a>
         </div>
     </div>
 </div>
@@ -24,11 +24,17 @@
             <td>{{$loop->index}}</td>
             <td>{{$value->nom}}</td> 
             <td>{{$value->prenom}}</td>
-            <td>{{$value->classe->libelle}}</td>
+            <td>{{$value->classes->libelle}}</td>
             <td>
-                <a class="btn btn-info" href="#">Show</a>
-                <a class="btn btn-primary" href="#">Edit</a>
-                <button type="submit" class="btn btn-danger">Delete</button>
+            <form action="{{ route('etudiant.delete', $value->id) }}" method="post">
+                    <a class="btn btn-info" href="{{ route('etudiant.show',$value->id)}}">Show</a>
+                    <a class="btn btn-primary" href="{{ route('etudiant.edit', $value->id) }}">Edit</a>
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Etes vous sur de vouloir effectuer cette operation');" >Delete</button>
+                   </form>
+            </td>
         </tr>
         @endforeach
 </table>

@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Etudiant extends Model
 {
     use HasFactory;
-    
-    public function classe(){
-        return $this->belongsTo(Classe::class);
+   
+    protected $fillable=['nom','prenom','classe_id'];
+    public function classes(){
+        return $this->belongsTo(Classe::class,'classe_id','id');
     }
 }
