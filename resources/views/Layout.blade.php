@@ -23,8 +23,8 @@
   </form>
 
   @else
-  <li class="md:mr-5 py-2 md:py-0"><a href="" class="hover:text-green-400">Se connecter</a></li>
-  <li class="md:mr-5 py-2 md:py-0"><a href="" class="hover:text-green-400">S'enregistrer</a></li>
+  <li class="md:mr-5 py-2 md:py-0"><a href="{{ route('login') }}" class="hover:text-green-400">Se connecter</a></li>
+  <li class="md:mr-5 py-2 md:py-0"><a href="{{ route('register') }}" class="hover:text-green-400">S'enregistrer</a></li>
   @endauth
  </ul>
 </div>
