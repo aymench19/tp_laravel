@@ -51,4 +51,4 @@
 
     <button type="submit" class="bg-green-500 text-white hover:bg-green-700 transition ease-in-out duration-500 rounded-md shadow-md w-full block px-4 py-2 mt-3">Créer mon compte</button>
 </form>
-@endsection 
+@endsection
